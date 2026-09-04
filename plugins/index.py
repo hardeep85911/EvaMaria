@@ -109,7 +109,8 @@ async def send_for_index(bot, message):
         await message.reply('Thank You For the Contribution, Wait For Admins To Approve!')
 
 
-@Client.on_message(filters.command('setskip') & filters.other & filters.private)
+@Client.on_message(filters.command('setskip') & filters.private)
+
 async def set_skip_number(bot, message):
     if ' ' in message.text:
         _, skip = message.text.split(" ")
