@@ -59,7 +59,11 @@ async def send_for_index(bot, message):
         chat_id = match.group(4)
         last_msg_id = int(match.group(5))
         if chat_id.isnumeric():
-            chat_id  = int(("-100" + chat_id
+            chat_id = int(("-100" + chat_id))
+
+            chat_id = int("-100" + str(chat_id))
+    elif message.forward_from_chat and message.forward_from_chat.type in [enums.ChatType.CHANNEL, enums.ChatType.SUPERGROUP, enums.ChatType.GROUP]:
+
          elif message.forward_from_chat and message.forward_from_chat.type in [enums.ChatType.CHANNEL, enums.ChatType.SUPERGROUP, enums.ChatType.GROUP]:
 
 
